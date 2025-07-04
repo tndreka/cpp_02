@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:21:56 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 16:00:14 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/04 17:15:24 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,43 @@ Fixed::Fixed(const int dec)
 	Constructor(const float param)
 	{
 	********
+	Using the same logic as we did at the previous constructor.
+	we will recive a float valueand need to store it as a fixed-point number.
+	with 8 fractional bits will convert the float to an int that will be the same value in fixed-point number.
+	we multiply the float with 2^8 and then conver it to int in which this part we this will handle also the fractional part
+	float = 5.25
+	fixed_point = (int)(dec * 256)
+	-> 5.25 * 256 (2^8 = 256) = 1344.0
+	as an int value it will be  1344 and this will be the represantor of the 5.25 in fixed-point num.
 	}
 */
-Fixed::Fixed(const float dec)
+Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called\n";
+	fixed_point = (int)(num * (1 << fractional_bits));
 }	
+
+Fixed & Fixed::operator=(const Fixed& other)
+{
+    std::cout << "Copy assignment operator called\n";
+    if (this != &other)
+        this->fixed_point = other.fixed_point;
+    return *this;
+}
+
+Fixed:: ~Fixed()
+{
+	std::cout << "Destructor called\n";
+}
+
+int		Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called\n";
+	return fixed_point;
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	std::cout << "getRawBits member function called\n";
+	fixed_point = raw;
+}
