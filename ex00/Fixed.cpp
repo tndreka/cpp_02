@@ -6,20 +6,22 @@
 /*   By: tndreka <tndreka@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:43:40 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 02:11:30 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/04 02:17:03 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixed_point(0)
+Fixed::Fixed()
 {
     std::cout << "Default constructor called\n";
+    fixed_point = 0;
 }
 
-Fixed::Fixed(const Fixed& other) : fixed_point(other.fixed_point)
+Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called\n";
+    *this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
