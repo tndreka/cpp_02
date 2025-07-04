@@ -6,11 +6,12 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:21:00 by tndreka           #+#    #+#             */
-/*   Updated: 2025/06/25 14:40:00 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/04 13:22:26 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
+
 int main( void )
 {
 	Fixed a;

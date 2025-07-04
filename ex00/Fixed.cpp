@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tndreka <tndreka@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:43:40 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 02:17:03 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/04 16:24:44 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Fixed& Fixed::operator=(const Fixed& other)
         this->fixed_point = other.fixed_point;
     return *this;
 }
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called\n";
