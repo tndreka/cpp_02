@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:21:56 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 17:15:24 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/04 17:40:27 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,17 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "getRawBits member function called\n";
 	fixed_point = raw;
+}
+
+int		Fixed::toInt(void) const
+{
+	return fixed_point >> fractional_bits;
+}
+
+float Fixed::toFloat(void)const
+{
+	float to_f;
+
+	to_f = fixed_point / 256;
+	return to_f;
 }
