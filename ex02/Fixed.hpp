@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:46 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 03:32:15 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/06 03:47:17 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	int		getRawBits(void) const;
 	int		setRawBits(int const raw) const;
 	int		toInt(void) const;
-	float	toFlorat(void) const;
+	float	toFloat(void) const;
 	
 };
 

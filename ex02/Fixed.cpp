@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 03:43:44 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/06 03:51:15 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,25 @@ Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called\n";
 	fixed_point = (int)(num *(1 << fractional_bits));
+}
+
+int Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member functiom called\n";
+	return fixed_point;
+}
+int Fixed::setRawBits(int const raw) const{
+	std::cout << "setRawBits member functiom called\n";
+	fixed_point = raw;
+}
+
+int Fixed::toInt(void) const
+{
+	return fixed_point >> fractional_bits;
+}
+float Fixed::toFloat(void) const
+{
+	float to_f;
+	to_f = (float)fixed_point / 256;
+	return to_f;
 }
