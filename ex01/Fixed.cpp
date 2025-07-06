@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:21:56 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 02:46:40 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/06 03:13:19 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "getRawBits member function called\n";
+	std::cout << "setRawBits member function called\n";
 	fixed_point = raw;
 }
 
