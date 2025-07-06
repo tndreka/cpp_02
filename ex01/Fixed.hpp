@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:20:29 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 17:18:30 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/06 02:39:20 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ class Fixed
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 };
-
+std::ostream& operator <<(std::ostream& out, const Fixed& fixed);
 #endif

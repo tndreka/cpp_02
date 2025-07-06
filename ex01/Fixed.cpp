@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:21:56 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/04 17:40:27 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/06 02:40:56 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,10 @@ float Fixed::toFloat(void)const
 
 	to_f = fixed_point / 256;
 	return to_f;
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
+{
+	out << fixed.toFloat();
+	return out;
 }
