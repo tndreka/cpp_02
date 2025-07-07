@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:46 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 19:30:05 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:37:02 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ public:
 	static	Fixed& max(Fixed& a, Fixed& b);
 	static	const Fixed& max(const Fixed& a, const Fixed& b);
 };
-
+std::ostream& operator <<(std::ostream& out, const Fixed& fixed);
 
 #endif
