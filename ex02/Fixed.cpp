@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 19:08:55 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:12:54 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,5 +160,19 @@ Fixed Fixed::operator++(int)
 {
 	Fixed tmp = *this;
 	fixed_point++;
+	return tmp;
+}
+
+
+Fixed& Fixed::operator--(void)
+{
+	fixed_point--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	fixed_point--;
 	return tmp;
 }
