@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:46 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 19:10:22 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:21:23 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ public:
 	Fixed	operator++(int);//post increment
 	Fixed&	operator--(void);//pre increment;
 	Fixed	operator--(int);//post increment
+	static	Fixed& min(Fixed& a, Fixed& b);
+	static	const Fixed& min(const Fixed& a, const Fixed& b);
 };
 
 
