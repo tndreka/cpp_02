@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 18:45:47 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:08:55 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,37 @@ Fixed Fixed:: operator/(const Fixed& other) const
 	Fixed res;
 	res.fixed_point = this->fixed_point / other.fixed_point;
 	return res;
+}
+
+/*
+	PRE INCREMENT ++Fixed
+	Fixed& operator++(void)
+	{
+		this function modifies Fixed value and adds 1 ro it,
+		and then it returns the same object after modification.
+	}
+*/
+
+Fixed& Fixed::operator++(void)
+{
+	fixed_point++;
+	return *this;
+}
+
+/*
+	POST DECREMENT Fixed++
+	Fixed Fixed::operator++(int)
+	{
+		This function first saves the old value and the increments and returns the old obj.
+		-> the int parameter is for the the compilet to know that this is the post increment not
+		the pre increment
+		
+	}
+
+*/
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	fixed_point++;
+	return tmp;
 }
