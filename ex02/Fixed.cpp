@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 18:30:17 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 18:35:04 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,29 @@ float Fixed::toFloat(void) const
 bool Fixed:: operator>(const Fixed& other)const
 {
 	return this->fixed_point > other.fixed_point;
+}
+
+bool Fixed:: operator<(const Fixed& other)const
+{
+	return this->fixed_point < other.fixed_point;
+}
+
+bool Fixed:: operator>=(const Fixed& other)const
+{
+	return this->fixed_point >= other.fixed_point;
+}
+
+bool Fixed:: operator<=(const Fixed& other)const
+{
+	return this->fixed_point <= other.fixed_point;
+}
+
+bool Fixed:: operator==(const Fixed& other)const
+{
+	return this->fixed_point == other.fixed_point;
+}
+
+bool Fixed:: operator!=(const Fixed& other)const
+{
+	return this->fixed_point != other.fixed_point;
 }
