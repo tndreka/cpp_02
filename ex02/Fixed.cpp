@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 19:28:38 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:30:43 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,4 +191,20 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 		return b;
 	else
 		return a;
+}
+
+Fixed& Fixed:: max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
 }
