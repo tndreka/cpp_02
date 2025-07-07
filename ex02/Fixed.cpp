@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 03:51:15 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 18:30:17 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ Fixed::Fixed(const int dec)
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called\n";
-	fixed_point = (int)(num *(1 << fractional_bits));
+	fixed_point = roundf(num *(1 << fractional_bits))
+	// fixed_point = (int)(num *(1 << fractional_bits));
 }
 
 int Fixed::getRawBits(void) const
@@ -54,7 +55,8 @@ int Fixed::getRawBits(void) const
 	std::cout << "getRawBits member functiom called\n";
 	return fixed_point;
 }
-int Fixed::setRawBits(int const raw) const{
+void Fixed::setRawBits(int const raw)
+{
 	std::cout << "setRawBits member functiom called\n";
 	fixed_point = raw;
 }
@@ -68,4 +70,9 @@ float Fixed::toFloat(void) const
 	float to_f;
 	to_f = (float)fixed_point / 256;
 	return to_f;
+}
+
+bool Fixed:: operator>(const Fixed& other)const
+{
+	return this->fixed_point > other.fixed_point;
 }
