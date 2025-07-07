@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:46 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 18:33:19 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 18:41:48 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ public:
 	bool	operator<=(const Fixed& other) const;
 	bool	operator==(const Fixed& other) const;
 	bool	operator!=(const Fixed& other) const;
+	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other)const;
+	Fixed	operator/(const Fixed& other)const;
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 03:23:44 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/07 18:35:04 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 18:45:47 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Fixed::Fixed(const int dec)
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called\n";
-	fixed_point = roundf(num *(1 << fractional_bits))
+	fixed_point = roundf(num *(1 << fractional_bits));
 	// fixed_point = (int)(num *(1 << fractional_bits));
 }
 
@@ -100,4 +100,32 @@ bool Fixed:: operator==(const Fixed& other)const
 bool Fixed:: operator!=(const Fixed& other)const
 {
 	return this->fixed_point != other.fixed_point;
+}
+
+Fixed Fixed:: operator+(const Fixed& other)const
+{
+	Fixed res;
+	res.fixed_point = this->fixed_point + other.fixed_point;
+	return res;
+}
+
+Fixed Fixed:: operator-(const Fixed& other)const
+{
+	Fixed res;
+	res.fixed_point = this->fixed_point - other.fixed_point;
+	return res;
+}
+
+Fixed Fixed:: operator*(const Fixed& other)const
+{
+	Fixed res;
+	res.fixed_point = this->fixed_point * other.fixed_point;
+	return res;
+}
+
+Fixed Fixed:: operator/(const Fixed& other) const
+{
+	Fixed res;
+	res.fixed_point = this->fixed_point / other.fixed_point;
+	return res;
 }
