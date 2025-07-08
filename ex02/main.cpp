@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:21:03 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 03:24:55 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/07 19:47:28 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,4 @@ int main( void )
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
+

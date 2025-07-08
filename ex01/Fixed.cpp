@@ -6,18 +6,27 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 13:21:56 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/06 03:13:19 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/08 17:49:11 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+/*
+	Default constructor
+	-Initializes the fixed_point to 0;
+*/
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called\n";
 	fixed_point = 0;
 }
 
+
+/*
+	Copy constructor
+	-Copy new object as copy of one existing one
+*/
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called\n";
@@ -42,7 +51,8 @@ Fixed::Fixed(const int dec)
 {
 	std::cout << "Int constructor called\n";
 	fixed_point = dec << fractional_bits;
-}	
+}
+
 /*
 	Constructor(const float param)
 	{
@@ -61,8 +71,14 @@ Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called\n";
 	fixed_point = (int)(num * (1 << fractional_bits));
-}	
+}
 
+/*
+	Copy Assignment Operator
+	-Does self-assignment check
+	-copies from source object
+	-returns a reference
+*/	
 Fixed & Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called\n";
@@ -71,28 +87,56 @@ Fixed & Fixed::operator=(const Fixed& other)
     return *this;
 }
 
+/*
+	Destructor
+	-Clean up
+	-Prints destruction message
+*/
 Fixed:: ~Fixed()
 {
 	std::cout << "Destructor called\n";
 }
 
+/*
+	getRawBits()
+		-access raw fixed point value
+		-print msg
+		-returns stored int value
+*/
 int		Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
 	return fixed_point;
 }
 
+/*
+	setRawBits()
+		-seter for raw fixed point value
+		-print msg
+		- sets the int
+*/
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called\n";
 	fixed_point = raw;
 }
 
+/*
+	toInt();
+		-Converts bacck to float by right shifting 8bits
+		-the same as devifing it by 2^8 or 256
+		-loses fractional part	
+*/
 int		Fixed::toInt(void) const
 {
 	return fixed_point >> fractional_bits;
 }
 
+/*
+	toFloat();
+		-Converts back to float by deviding by 256
+		-saves fractional part	
+*/
 float Fixed::toFloat(void)const
 {
 	float to_f;
@@ -101,6 +145,11 @@ float Fixed::toFloat(void)const
 	return to_f;
 }
 
+/*
+		STREAM OPERATOR
+	- Outputs the floating-point representation
+	- Uses toFloat() for conversion
+*/
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
 	out << fixed.toFloat();
